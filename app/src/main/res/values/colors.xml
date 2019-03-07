@@ -13,4 +13,5 @@
     <color name="LittleWhite">#9effffff</color>
     <color name="littlePurple">#79b429e7</color>
     <color name="orange">#ff541a</color>
+    <color name="black">#000</color>
 </resources>

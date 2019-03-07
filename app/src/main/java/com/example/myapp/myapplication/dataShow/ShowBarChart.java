@@ -1,10 +1,11 @@
-package com.example.myapp.myapplication;
+package com.example.myapp.myapplication.dataShow;
 
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.myapp.myapplication.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -12,7 +13,7 @@ import com.github.mikephil.charting.data.BarEntry;
 
 import java.util.ArrayList;
 
-public class barChart extends AppCompatActivity {
+public class ShowBarChart extends AppCompatActivity {
     private BarChart mChart;
 
     @Override
@@ -45,6 +46,7 @@ public class barChart extends AppCompatActivity {
         mChart.setDrawGridBackground(false);
         //设置表格网格背景的颜色
 //        mChart.setGridBackgroundColor(getResources().getColor(R.color.lightBlue));
+//        mChart.setGridBackgroundColor(getResources().getColor(R.color.black));
     }
 
     /**
@@ -89,10 +91,14 @@ public class barChart extends AppCompatActivity {
         ArrayList<Integer> colors = new ArrayList<Integer>();
 
         //设置柱形的颜色
-        colors.add(getResources().getColor(R.color.blue));
-        colors.add(getResources().getColor(R.color.yellow));
-        colors.add(getResources().getColor(R.color.red));
-        colors.add(getResources().getColor(R.color.purple));
+//        colors.add(getResources().getColor(R.color.blue));
+//        colors.add(getResources().getColor(R.color.yellow));
+//        colors.add(getResources().getColor(R.color.red));
+//        colors.add(getResources().getColor(R.color.purple));
+        colors.add(getResources().getColor(R.color.black));
+//        colors.add(getResources().getColor(R.color.white));
+//        colors.add(getResources().getColor(R.color.black));
+//        colors.add(getResources().getColor(R.color.white));
 
         barDataSet.setColors(colors);
 

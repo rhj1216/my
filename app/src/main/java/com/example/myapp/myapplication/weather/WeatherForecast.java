@@ -1,4 +1,4 @@
-package com.example.myapp.myapplication;
+package com.example.myapp.myapplication.weather;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.example.myapp.myapplication.R;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -18,12 +18,12 @@ public class WeatherForecast extends AppCompatActivity {
     private String TAG="__________________________--";
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forecast);
-        init();
+        setContentView(R.layout.activity_weather_forecast);
+        initView();
         getData();
     }
 
-    private void init() {
+    private void initView() {
         today=findViewById(R.id.today);
         tomorrow=findViewById(R.id.tomorrow);
         afterTomorrow=findViewById(R.id.afterTomorrow);

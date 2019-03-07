@@ -1,9 +1,7 @@
-package com.example.myapp.myapplication;
+package com.example.myapp.myapplication.map;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -11,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 
-import com.amap.api.maps.model.LatLng;
 import com.amap.api.navi.AMapNavi;
 import com.amap.api.navi.AMapNaviListener;
 import com.amap.api.navi.AMapNaviView;
@@ -32,6 +29,7 @@ import com.amap.api.navi.model.AimLessModeStat;
 import com.amap.api.navi.model.NaviInfo;
 import com.amap.api.navi.model.NaviLatLng;
 import com.autonavi.tbt.TrafficFacilityInfo;
+import com.example.myapp.myapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,16 +40,21 @@ public class MapNavi extends AppCompatActivity implements AMapNaviViewListener, 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         setContentView(R.layout.activity_mapnavi);
         super.onCreate(savedInstanceState);
+        initView();
+        navi_view.onCreate(savedInstanceState);
+    }
+
+    private void initView() {
         //获取 AMapNaviView 实例
         navi_view= (AMapNaviView) findViewById(R.id.navi_view);
         navi_view.setAMapNaviViewListener(this);
-        navi_view.onCreate(savedInstanceState);
         //获取AMapNavi实例
         aMapNavi = AMapNavi.getInstance(this);
         //添加监听回调，用于处理算路成功
         aMapNavi.addAMapNaviListener(this);
         aMapNavi.setUseInnerVoice(true);
     }
+
     //按下返回键
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {//当返回按键被按下

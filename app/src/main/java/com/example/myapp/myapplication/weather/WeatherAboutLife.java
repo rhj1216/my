@@ -1,16 +1,13 @@
-package com.example.myapp.myapplication;
+package com.example.myapp.myapplication.weather;
 
-import android.content.Intent;
-import android.nfc.Tag;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.widget.TextView;
 
-import java.util.Arrays;
+import com.example.myapp.myapplication.R;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +25,12 @@ public class WeatherAboutLife extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weaheraboutlife);
+        setContentView(R.layout.activity_weather_aboutlife);
+        initView();
+        getMapData();
+    }
+
+    private void initView() {
         lifeIndex=findViewById(R.id.lifeIndex);
         dressIndex=findViewById(R.id.dressIndex);
         fluIndex=findViewById(R.id.fluIndex);
@@ -37,8 +39,8 @@ public class WeatherAboutLife extends AppCompatActivity {
         ultravioletIndex=findViewById(R.id.ultravioletIndex);
         washIndex=findViewById(R.id.washIndex);
         airIndex=findViewById(R.id.airIndex);
-        getMapData();
     }
+
     public void getMapData(){
         //数值键值对
         Map<Integer,String[]> lifeIndexMap = (Map<Integer, String[]>) getIntent().getSerializableExtra("lifeIndexMap");

@@ -1,4 +1,4 @@
-package com.example.myapp.myapplication;
+package com.example.myapp.myapplication.logistics;
 
 import android.annotation.SuppressLint;
 import android.database.Cursor;
@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.myapp.myapplication.R;
+import com.example.myapp.myapplication.UserDB;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,6 +32,12 @@ public class Logistics extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         setContentView(R.layout.activity_stock);
         super.onCreate(savedInstanceState);
+        initView();
+        GetDBObject();
+//        Log.i("当前时间","onCreate: "+getTime());
+    }
+
+    private void initView() {
         enter=findViewById(R.id.enter);
         out=findViewById(R.id.out);
         editText=findViewById(R.id.EText);
@@ -39,8 +48,6 @@ public class Logistics extends AppCompatActivity implements View.OnClickListener
         view.setOnTouchListener(this);
         enter.setOnClickListener(this);
         out.setOnClickListener(this);
-        GetDBObject();
-//        Log.i("当前时间","onCreate: "+getTime());
     }
 
     //获取库有读的数据库对象

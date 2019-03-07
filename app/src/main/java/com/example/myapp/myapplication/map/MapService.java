@@ -1,4 +1,4 @@
-package com.example.myapp.myapplication;
+package com.example.myapp.myapplication.map;
 
 import android.Manifest;
 import android.content.Context;
@@ -24,6 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.amap.api.maps.AMap;
@@ -36,7 +37,6 @@ import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
 import com.amap.api.maps.model.MyLocationStyle;
-import com.amap.api.navi.enums.NetWorkingProtocol;
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.core.PoiItem;
 import com.amap.api.services.geocoder.GeocodeResult;
@@ -49,6 +49,7 @@ import com.amap.api.services.help.InputtipsQuery;
 import com.amap.api.services.help.Tip;
 import com.amap.api.services.poisearch.PoiResult;
 import com.amap.api.services.poisearch.PoiSearch;
+import com.example.myapp.myapplication.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -77,8 +78,8 @@ public class MapService extends AppCompatActivity implements AMap.OnMyLocationCh
     private Button satelliteMap;
     private Button nightMap;
     private Button getInputBox;
-    private Button configuration;
-    private Button navi;
+    private LinearLayout configuration;
+    private LinearLayout navi;
     private AutoCompleteTextView inputText;
     private EditText eText;
     private ConstraintLayout makerInfo;
@@ -111,6 +112,11 @@ public class MapService extends AppCompatActivity implements AMap.OnMyLocationCh
         mapView = findViewById(R.id.map);
         //在activity执行onCreate时执行mMapView.onCreate(savedInstanceState)，创建地图
         mapView.onCreate(savedInstanceState);
+        initView();
+        getPermission();
+    }
+
+    private void initView() {
         view = findViewById(R.id.map);
         normalMap = findViewById(R.id.normalMap);
         satelliteMap = findViewById(R.id.satelliteMap);
@@ -133,8 +139,8 @@ public class MapService extends AppCompatActivity implements AMap.OnMyLocationCh
         navi.setOnClickListener(this);
         inputText.addTextChangedListener(this);//添加搜索框监听
         inputText.setOnFocusChangeListener(this);
-        getPermission();
     }
+
     //获取权限
     public void getPermission() {
         //请求码
@@ -599,25 +605,6 @@ public class MapService extends AppCompatActivity implements AMap.OnMyLocationCh
     //按下返回键
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {//当返回按键被按下
-//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//            builder.setMessage("确认退出吗？");
-//            builder.setTitle("提示");
-//            builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    dialog.dismiss();//对话框消失
-//                    Bundle bundle=new Bundle();
-//                    onSaveInstanceState(bundle);
-//                    MapService.this.finish();
-//                }
-//            });
-//            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    dialog.dismiss();
-//                }
-//            });
-//            builder.create().show();
             aMap = null;
             MapService.this.finish();
         }

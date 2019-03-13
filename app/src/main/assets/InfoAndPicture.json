@@ -1,0 +1,24 @@
+{
+  "infoAndPicture":[
+    {
+      "type":"地图",
+      "picture": "R.mipmap.map"
+    },
+    {
+      "type":"天气",
+      "picture":"R.mipmap.weather"
+    },
+    {
+      "type":"数据",
+      "picture":"R.mipmap.data_statics"
+    },
+    {
+      "type":"物流",
+      "picture":"R.mipmap.in_out"
+    },
+    {
+      "type":"更多",
+      "picture":"R.mipmap.more"
+    }
+  ]
+}

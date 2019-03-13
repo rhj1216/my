@@ -1,0 +1,20 @@
+{
+  "infoAndPicture":[
+    {
+      "pic":"map",
+      "type":"地图"
+    },
+    {
+      "pic":"weather",
+      "type":"天气"
+    },
+    {
+      "pic":"data_statics",
+      "type":"数据"
+    },
+    {
+      "pic":"in_out",
+      "type":"物流"
+    }
+  ]
+}

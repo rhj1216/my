@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="配置"
+            android:layout_gravity="right"
+            android:id="@+id/configuration"
+            android:background="@drawable/bottom_style"
+            >
+        </Button>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="正在使用"
+            android:textColor="#000"
+            />
+        <GridView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4"
+            android:horizontalSpacing="40dp"
+            android:verticalSpacing="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:id="@+id/currentIcon"
+            android:background="@drawable/grid_view_border"
+            android:paddingBottom="40dp"
+            >
+
+        </GridView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部应用"
+            android:textColor="#000"
+            />
+        <GridView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4"
+            android:horizontalSpacing="40dp"
+            android:verticalSpacing="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:id="@+id/allIcon"
+            >
+
+        </GridView>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

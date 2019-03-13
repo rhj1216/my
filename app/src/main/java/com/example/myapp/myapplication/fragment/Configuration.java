@@ -1,7 +1,6 @@
-package com.example.adeng.jsongetandcreate;
+package com.example.myapp.myapplication;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -13,9 +12,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,7 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class configuration extends AppCompatActivity {
+public class Configuration extends AppCompatActivity {
     private GridView allIconView;
     private GridView currentIconView;
     private List<Map<String,Object>> dataList;
@@ -46,7 +43,7 @@ public class configuration extends AppCompatActivity {
     private Boolean on_off=false;
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
-        setContentView(R.layout.configuration);
+        setContentView(R.layout.activity_configuration);
         initView();
         initAllIconGirdView(allIconView);
         getCurrentIconData();
@@ -255,7 +252,7 @@ public class configuration extends AppCompatActivity {
                     for(int i=0;i<currentDataList.size();i++){
                         currentIconView.getChildAt(i).findViewById(R.id.minus).setVisibility(View.INVISIBLE);
                     }
-                    AlertDialog.Builder builder=new AlertDialog.Builder(configuration.this);
+                    AlertDialog.Builder builder=new AlertDialog.Builder(Configuration.this);
                     JSONArray jsonArray=new JSONArray();
                     JSONObject iconData=new JSONObject();
                     JSONObject jsonObject=null;
